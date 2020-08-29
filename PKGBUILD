@@ -26,7 +26,7 @@ pkgver()
 build()
 {
   cd "${srcdir}/${pkgname}"
-  make
+  make PREFIX="/usr"
 }
 
 package()
