@@ -2,7 +2,7 @@
 
 pkgname=minipro-git
 pkgver=0.4.r78.gce259af
-pkgrel=1
+pkgrel=2
 pkgdesc="Open source programming utility for autoelectric.cn Minipro TL866"
 url="https://gitlab.com/DavidGriffith/minipro"
 arch=("i686" "x86_64")
@@ -34,6 +34,7 @@ package()
 {
   cd "${srcdir}/${pkgname}"
   make DESTDIR="${pkgdir}" PREFIX="/usr" COMPLETIONS_DIR="/usr/share/bash-completion/completions" install
+  rm ${pkgdir}/usr/lib/udev/rules.d/61-minipro-plugdev.rules
 }
 
 # vim: ts=2 sw=2 et:
